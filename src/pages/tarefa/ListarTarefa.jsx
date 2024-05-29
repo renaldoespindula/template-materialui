@@ -61,9 +61,7 @@ const ListarTarefa = () => {
     setIdTarefaSelecionada(id);
 
     //Objeto local para armazenamento da tarefa filtrada de acordo com a seleção do usuário
-    let tarefaParaEditar = tarefas.filter(obj => {
-      return obj.idTarefa === id;
-    })[0];
+    let tarefaParaEditar = tarefas.filter(obj => obj.idTarefa === id)[0];
 
     //Atribuição do Objeto local, setado acima, ao state Tarefa
     setTarefa(tarefaParaEditar);
@@ -74,9 +72,7 @@ const ListarTarefa = () => {
 
   const handleDeletar = (id) => {
     setTarefas(current =>
-      current.filter(tarefa => {
-        return tarefa.idTarefa !== id;
-      }),
+      current.filter(tarefa => tarefa.idTarefa !== id)
     );
   };
 
